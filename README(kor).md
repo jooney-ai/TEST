@@ -1,4 +1,32 @@
-# Scene Text Recognition 모델 비교의 문제점: 데이터셋 및 모델 분석
+# OCR README
+
+OCR 모델 학습 방법
+
+OCR 모델 학습에는 recognition, detection 두가지 모델을 학습시켜야 합니다.
+
+* recognition : 문자 인식 모델
+* detection : 문자 영역 탐지 모델
+
+## 실행파일
+
+```
+root
+├── 1.EasyOCR_tutorial.ipynb    # EasyOCR 환경구축 및 모델 학습까지의 과정들이 담겨 있습니다.
+├── 2.augmentation.ipynb        # 데이터 증강을 위한 코드가 있습니다.
+├── 3.labeling.ipynb            # 데이터셋 구축 시, 레이블링 작업을 위한 코드가 있습니다.
+├── 4.recognition_train.ipynb   # recognition 모델 학습 코드가 있습니다.
+├── ...
+└── craft               # detection에 필요한 코드들이 담겨 있습니다. 관련 설명은 craft의 README를 참고해주세요.
+    ├── train.py
+    ├── eval.py
+    └── ...
+```
+
+recognition의 기반인 deep-text-recognition-benchmark에 대해 자세한 설명은 아래를 참고해주세요.
+
+---
+
+## Scene Text Recognition 모델 비교의 문제점: 데이터셋 및 모델 분석
 
 | [논문 링크](https://arxiv.org/abs/1904.01906) | [훈련 및 평가 데이터 다운로드](https://github.com/clovaai/deep-text-recognition-benchmark#download-lmdb-dataset-for-traininig-and-evaluation-from-here) | [실패 사례 및 정제된 라벨 다운로드](https://github.com/clovaai/deep-text-recognition-benchmark#download-failure-cases-and-cleansed-label-from-here) | [사전 학습된 모델](https://www.dropbox.com/sh/j3xmli4di1zuv3s/AAArdcPgz7UFxIHUuKNOeKv_a?dl=0) | [Baidu 버전(비밀번호: rryk)](https://pan.baidu.com/s/1KSNLv4EY3zFWHpBYlpFCBQ) |
 
