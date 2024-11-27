@@ -2,23 +2,10 @@
 
 | [논문 링크](https://arxiv.org/abs/1904.01906) | [훈련 및 평가 데이터 다운로드](https://github.com/clovaai/deep-text-recognition-benchmark#download-lmdb-dataset-for-traininig-and-evaluation-from-here) | [실패 사례 및 정제된 라벨 다운로드](https://github.com/clovaai/deep-text-recognition-benchmark#download-failure-cases-and-cleansed-label-from-here) | [사전 학습된 모델](https://www.dropbox.com/sh/j3xmli4di1zuv3s/AAArdcPgz7UFxIHUuKNOeKv_a?dl=0) | [Baidu 버전(비밀번호: rryk)](https://pan.baidu.com/s/1KSNLv4EY3zFWHpBYlpFCBQ) |
 
-이 코드는 PyTorch를 기반으로 한 Scene Text Recognition(STR) 4단계 프레임워크의 공식 구현입니다.  
-대부분의 기존 STR 모델들이 이 프레임워크에 적합합니다.  
-이 프레임워크를 사용하면 일관된 훈련 및 평가 데이터셋 하에서 정확도, 속도, 메모리 요구량 측면에서 모듈별 성능 기여도를 분석할 수 있습니다.  
-이를 통해 기존 모듈의 성능 향상을 이해하기 위한 비교 과정에서 발생하는 혼란을 줄일 수 있습니다.
-
----
-
-![Trade-off](./figures/trade-off.png)
-
-## 주요 성과
-이 프레임워크를 기반으로 다음과 같은 ICDAR 대회에서 우수한 성적을 기록하였습니다:
-- [ICDAR2013](https://rrc.cvc.uab.es/?ch=2&com=evaluation&task=3): 1위
-- [ICDAR2019 ArT](https://rrc.cvc.uab.es/files/ICDAR2019-ArT.pdf): 1위
-- [ICDAR2017 COCO-Text](https://rrc.cvc.uab.es/?ch=5&com=evaluation&task=2): 3위
-- [ICDAR2019 ReCTS (task1)](https://rrc.cvc.uab.es/files/ICDAR2019-ReCTS.pdf): 3위
-
-논문과 ICDAR 챌린지 간의 차이는 [여기](https://github.com/clovaai/deep-text-recognition-benchmark/issues/13)에 정리되어 있습니다.
+이 코드는 PyTorch를 기반으로 구현된 Scene Text Recognition(STR) 4단계 프레임워크의 공식 버전입니다.
+대부분의 기존 STR 모델이 이 프레임워크와 호환됩니다.
+이 프레임워크는 일관된 훈련 및 평가 데이터셋을 활용해 정확도, 속도, 메모리 사용량 측면에서 각 모듈의 성능 기여도를 체계적으로 분석할 수 있도록 설계되었습니다.
+이를 통해 기존 모듈의 성능 향상을 명확히 이해할 수 있으며, 모델 비교 과정에서 발생하는 혼란을 효과적으로 해소할 수 있습니다.
 
 ---
 
@@ -224,16 +211,3 @@ test/word_3.png A
 - **Detection Repository**: [CRAFT-pytorch](https://github.com/clovaai/CRAFT-pytorch)
 
 ---
-
-## Citation
-이 연구가 귀하의 연구에 도움이 된다면, 아래와 같이 인용을 고려해주세요:
-```bibtex
-@inproceedings{baek2019STRcomparisons,
-  title={What Is Wrong With Scene Text Recognition Model Comparisons? Dataset and Model Analysis},
-  author={Baek, Jeonghun and Kim, Geewook and Lee, Junyeop and Park, Sungrae and Han, Dongyoon and Yun, Sangdoo and Oh, Seong Joon and Lee, Hwalsuk},
-  booktitle = {International Conference on Computer Vision (ICCV)},
-  year={2019},
-  pubstate={published},
-  tppubtype={inproceedings}
-}
-```
