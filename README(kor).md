@@ -71,11 +71,6 @@ CUDA_VISIBLE_DEVICES=0 python3 demo.py \
 --saved_model TPS-ResNet-BiLSTM-Attn.pth
 
 ```
-CUDA_VISIBLE_DEVICES=0 python3 demo.py \
---Transformation TPS --FeatureExtraction ResNet --SequenceModeling BiLSTM --Prediction Attn \
---image_folder demo_image/ \
---saved_model TPS-ResNet-BiLSTM-Attn.pth
-```
 
 #### 예측 결과
 
@@ -102,8 +97,10 @@ CUDA_VISIBLE_DEVICES=0 python3 train.py \
 --train_data data_lmdb_release/training --valid_data data_lmdb_release/validation \
 --select_data MJ-ST --batch_ratio 0.5-0.5 \
 --Transformation None --FeatureExtraction VGG --SequenceModeling BiLSTM --Prediction CTC
+```
 
 2. **CRNN 모델 평가** IC15-2077 평가를 수행하려면 데이터 필터링 부분을 확인하세요.  [data filtering part](https://github.com/clovaai/deep-text-recognition-benchmark/blob/c27abe6b4c681e2ee0784ad966602c056a0dd3b5/dataset.py#L148). 
+
 ```
 CUDA_VISIBLE_DEVICES=0 python3 test.py \
 --eval_data data_lmdb_release/evaluation --benchmark_all_eval \
@@ -126,6 +123,7 @@ CUDA_VISIBLE_DEVICES=0 python3 test.py \
 --Transformation TPS --FeatureExtraction ResNet --SequenceModeling BiLSTM --Prediction Attn \
 --saved_model saved_models/TPS-ResNet-BiLSTM-Attn-Seed1111/best_accuracy.pth
 ```
+
 ### Arguments
 * `--train_data`: 훈련용 LMDB 데이터셋 폴더 경로.
 * `--valid_data`: 검증용 LMDB 데이터셋 폴더 경로.
