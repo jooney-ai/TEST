@@ -1,11 +1,11 @@
 # OCR README
 
-OCR 모델 학습 방법
+## OCR 모델 학습 방법
 
-OCR 모델 학습에는 recognition, detection 두가지 모델을 학습시켜야 합니다.
+OCR 라이브러리로는 EasyOCR을 사용했으며, OCR 모델 학습을 위해 recognition, detection 두가지 모델을 학습시켜야 합니다.
 
-* recognition : 문자 인식 모델
-* detection : 문자 영역 탐지 모델
+* **recognition** : 문자 인식 모델
+* **detection** : 문자 영역 탐지 모델
 
 ## 실행파일
 
@@ -16,7 +16,7 @@ root
 ├── 3.labeling.ipynb            # 데이터셋 구축 시, 레이블링 작업을 위한 코드가 있습니다.
 ├── 4.recognition_train.ipynb   # recognition 모델 학습 코드가 있습니다.
 ├── ...
-└── craft               # detection에 필요한 코드들이 담겨 있습니다. 관련 설명은 craft의 README를 참고해주세요.
+└── craft                       # detection에 필요한 코드들이 담겨 있습니다. 관련 설명은 craft의 README를 참고해주세요.
     ├── train.py
     ├── eval.py
     └── ...
