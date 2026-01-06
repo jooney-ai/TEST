@@ -1,4 +1,4 @@
-import google.generativeai as genai
+from google import genai
 import json
 import os
 
@@ -7,10 +7,12 @@ import os
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 PROMPT = os.environ.get("PROMPT")
 DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL")
-genai.configure(api_key=GEMINI_API_KEY)
+# genai.configure(api_key=GEMINI_API_KEY)
+client = genai.Client(api_key=GEMINI_API_KEY)
 
 # 2. 모델 설정 (Gemini 1.5 Flash가 빠르고 저렴하여 추천)
-model = genai.GenerativeModel('gemini-2.5-flash')
+# model = genai.GenerativeModel('gemini-2.5-flash')
+model = 'gemini-2.5-flash'
 
 
 def message(text):
@@ -43,7 +45,10 @@ def save_memory(video_info):
 def test():
     try:
         # API 호출
-        response = model.generate_content(PROMPT)
+        response = client.models.generate_content(
+            model=model, 
+            contents=prompt
+        )
         
         # 텍스트를 JSON으로 변환 (가끔 ```json ``` 태그가 붙을 수 있어 제거)
         clean_text = response.text.replace("```json", "").replace("```", "").strip()
