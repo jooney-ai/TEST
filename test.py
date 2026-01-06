@@ -15,6 +15,7 @@ model = genai.GenerativeModel('gemini-2.5-flash')
 def message(text):
 
     try:
+        os.makedirs("Memory", exist_ok=True)
         discord_payload = {"content": text}
         response = requests.post(DISCORD_WEBHOOK_URL, json=discord_payload)
         response.raise_for_status()
