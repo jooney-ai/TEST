@@ -15,7 +15,6 @@ model = genai.GenerativeModel('gemini-2.5-flash')
 def message(text):
 
     try:
-        os.makedirs("Memory", exist_ok=True)
         discord_payload = {"content": text}
         response = requests.post(DISCORD_WEBHOOK_URL, json=discord_payload)
         response.raise_for_status()
@@ -30,7 +29,8 @@ def message(text):
 
 def save_memory(video_info):
     try:
-        memory = "Memory/memory.jsonl"
+        os.makedirs("Memory", exist_ok=True)
+        memory = "Memory/test.jsonl"
         with open(memory, 'a', encoding='utf-8') as f:
             f.write(json.dumps(video_info, ensure_ascii=False) + "\n")
         print(f"[save memory]")
