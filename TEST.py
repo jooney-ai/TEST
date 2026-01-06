@@ -1,5 +1,6 @@
 import google.generativeai as genai
 import json
+import os
 
 # 1. API 키 설정 (본인의 키로 교체하세요)
 # NAME = os.environ.get("NAME", 0)
