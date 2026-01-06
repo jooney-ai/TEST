@@ -47,7 +47,7 @@ def test():
         # API 호출
         response = client.models.generate_content(
             model=model, 
-            contents=prompt
+            contents=PROMPT
         )
         
         # 텍스트를 JSON으로 변환 (가끔 ```json ``` 태그가 붙을 수 있어 제거)
