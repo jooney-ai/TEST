@@ -14,7 +14,8 @@ client = genai.Client(api_key=GEMINI_API_KEY)
 # 2. 모델 설정 (Gemini 1.5 Flash가 빠르고 저렴하여 추천)
 # model = genai.GenerativeModel('gemini-2.5-flash')
 # model = 'gemini-2.5-flash'  # 일일 요청 RPD 약 20회 제한
-model = 'gemini-2.5-flash-lite'
+# model = 'gemini-2.5-flash-lite'
+model = 'gemini-2.0-flash'
 
 
 def message(text):
