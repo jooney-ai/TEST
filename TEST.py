@@ -50,16 +50,20 @@ def test():
         # API 호출
         response = client.models.generate_content(
             model=model, 
-            contents=PROMPT
+            contents=PROMPT,
+            config={'response_mime_type': 'application/json'}  # JSON 반환
         )
         
         # 텍스트를 JSON으로 변환 (가끔 ```json ``` 태그가 붙을 수 있어 제거)
-        clean_text = response.text.replace("```json", "").replace("```", "").strip()
-        result = json.loads(clean_text)
+        # clean_text = response.text.replace("```json", "").replace("```", "").strip()
+        # result = json.loads(clean_text)
+        json_response = json.loads(response)
 
         # 결과 처리
-        if result.get("alert"):
-            text = f"🚨 [긴급 알림] {result['title']} \n 내용: {result['reason']} \n 출처: {result['source']}"
+        if json_response.get("alert"):
+            text = f"🚨 [긴급 알림] {json_response['title']} \n 내용: {json_response['reason']} \n 출처: {json_response['source']}"
+        # if result.get("alert"):
+        #     text = f"🚨 [긴급 알림] {result['title']} \n 내용: {result['reason']} \n 출처: {result['source']}"
             result = message(text)
             if result:
                 save_memory(text)
