@@ -57,7 +57,7 @@ def test():
         # 텍스트를 JSON으로 변환 (가끔 ```json ``` 태그가 붙을 수 있어 제거)
         # clean_text = response.text.replace("```json", "").replace("```", "").strip()
         # result = json.loads(clean_text)
-        json_response = json.loads(response)
+        json_response = json.loads(response.text)
 
         # 결과 처리
         if json_response.get("alert"):
